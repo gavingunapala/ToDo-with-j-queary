@@ -8,6 +8,7 @@ $(document).ready(() => {
   $.widget("custom.addData", {
     _create: function () {
       this.addto();
+
       // Bind click events on the changer button to the randomClick method
       this._on(this.delBtn, {
         click: "deleteClick",
@@ -19,23 +20,18 @@ $(document).ready(() => {
     },
 
     addto: function () {
-      //inputs
-      let title = titleInput;
-      let todo = TodoInput;
+      //beforend
+      $("#listItems").prepend(this.element[0]);
 
       //div
-      this.div = $("<li>", {
-        // id: "aaa",
-      }).appendTo(this.element);
-
+      this.div = $("<li>").appendTo(this.element);
       this.div.addClass("custom-deletebtn");
-
       this.lable = $(`<lable>TITLE : </lable>`).appendTo(this.div);
-      this.lable = $(`<lable>${title.value} </lable>`).appendTo(this.div);
+      this.lable = $(`<lable>${titleInput.value} </lable>`).appendTo(this.div);
       this.br = $(`<br>`).appendTo(this.div);
       this.lable = $(`<lable>TO-DO : </lable>`).appendTo(this.div);
       this.inputtodo = $(
-        `<input id = 'inputtodo' value =${todo.value} readonly/> </input>`
+        `<input id = 'inputtodo' value =${TodoInput.value} readonly/> </input>`
       ).appendTo(this.div);
       $(`<br>`).appendTo(this.div);
 
