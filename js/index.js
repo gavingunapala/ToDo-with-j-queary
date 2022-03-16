@@ -4,6 +4,7 @@ $(document).ready(() => {
   const titleInput = document.querySelector("#Title");
   const TodoInput = document.querySelector("#ListTODO");
 
+  // careate date variable
   let d = new Date();
   let currDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
   console.log(currDate);
@@ -23,6 +24,7 @@ $(document).ready(() => {
       });
     },
 
+    //add list
     addto: function () {
       //beforend
       $("#listItems").prepend(this.element[0]);
@@ -54,11 +56,12 @@ $(document).ready(() => {
         .button();
     },
 
+    // delete button
     deleteClick: function (event) {
-      // list_el.removeChild(event.target);
       list_el.querySelector(`#${this.element[0].id}`).remove();
-      // console.log(this.element[0].id);
     },
+
+    //edit button
     EditClick: function (event) {
       edit = this.element[0];
       if (event.target.innerText === "edit") {
@@ -73,6 +76,7 @@ $(document).ready(() => {
     },
   });
 
+  // form
   $("#form").on("submit", (e) => {
     e.preventDefault();
 
@@ -82,7 +86,6 @@ $(document).ready(() => {
     console.log("form click");
 
     let a = titleInput.value;
-    console.log(a);
     $(`<div >`, {
       id: `${a}`,
     }).appendTo("#listItems");
