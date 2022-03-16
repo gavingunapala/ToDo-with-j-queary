@@ -4,6 +4,10 @@ $(document).ready(() => {
   const titleInput = document.querySelector("#Title");
   const TodoInput = document.querySelector("#ListTODO");
 
+  let d = new Date();
+  let currDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+  console.log(currDate);
+
   // custom widget
   $.widget("custom.addData", {
     _create: function () {
@@ -34,6 +38,10 @@ $(document).ready(() => {
         `<input id = 'inputtodo' value =${TodoInput.value} readonly/> </input>`
       ).appendTo(this.div);
       $(`<br>`).appendTo(this.div);
+      this.lable = $(`<lable>today Date id : ${currDate} </lable>`).appendTo(
+        this.div
+      );
+      this.br = $(`<br>`).appendTo(this.div);
 
       //delete btn
       this.delBtn = $("<button Id= 'delete'> delete</button>")
