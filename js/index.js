@@ -1,5 +1,6 @@
 $(document).ready(() => {
   $("#add").button();
+
   const list_el = document.querySelector("#listItems");
   const titleInput = document.querySelector("#Title");
   const TodoInput = document.querySelector("#ListTODO");
@@ -31,19 +32,15 @@ $(document).ready(() => {
 
       //div
       this.div = $("<li>").appendTo(this.element);
-      this.div.addClass("custom-deletebtn");
-      this.lable = $(`<lable>TITLE : </lable>`).appendTo(this.div);
-      this.lable = $(`<lable>${titleInput.value} </lable>`).appendTo(this.div);
-      this.br = $(`<br>`).appendTo(this.div);
+      // this.div.addClass("custom-deletebtn");
+      this.lable = $(`<h2>${titleInput.value} </h2>`).appendTo(this.div);
       this.lable = $(`<lable>TO-DO : </lable>`).appendTo(this.div);
       this.inputtodo = $(
         `<input id = 'inputtodo' value =${TodoInput.value} readonly/> </input>`
       ).appendTo(this.div);
-      $(`<br>`).appendTo(this.div);
       this.lable = $(`<lable>today Date id : ${currDate} </lable>`).appendTo(
         this.div
       );
-      this.br = $(`<br>`).appendTo(this.div);
 
       //delete btn
       this.delBtn = $("<button Id= 'delete'> delete</button>")
@@ -88,6 +85,7 @@ $(document).ready(() => {
     let a = titleInput.value;
     $(`<div >`, {
       id: `${a}`,
+      class: "liitem",
     }).appendTo("#listItems");
 
     $(`#${a}`).addData();

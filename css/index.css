@@ -1,0 +1,21 @@
+#form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+li {
+  background-color: burlywood;
+  display: grid;
+  justify-content: space-between;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+}
+.liitem {
+  padding-top: 12px;
+}
+h1 {
+  font-family: "Courier New", Courier, monospace;
+}
